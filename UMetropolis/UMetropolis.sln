@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMetropolis.Infrastructure", "UMetropolis.Infrastructure\UMetropolis.Infrastructure.csproj", "{9687F2C9-5151-41CD-AFFB-BE835CB5FEE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UMetropolis.Infrastructure", "UMetropolis.Infrastructure\UMetropolis.Infrastructure.csproj", "{9687F2C9-5151-41CD-AFFB-BE835CB5FEE3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UMetropolis.Domaine", "UMetropolis.Domaine\UMetropolis.Domaine.csproj", "{5198CA5E-47E3-409A-8409-86D3E067D71F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UMetropolis.Service", "UMetropolis.Service\UMetropolis.Service.csproj", "{246C93BE-77F0-467B-960B-88805DE907DB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UMetropolis.Web", "UniversiteMetropolisWeb\UMetropolis.Web.csproj", "{22CA041A-7417-4517-8166-6FDDFFD04C7B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UMetropolis.Tests", "UMetropolis.Tests\UMetropolis.Tests.csproj", "{15F47477-2A0B-4BB7-8985-92DD291B5498}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{9687F2C9-5151-41CD-AFFB-BE835CB5FEE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9687F2C9-5151-41CD-AFFB-BE835CB5FEE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9687F2C9-5151-41CD-AFFB-BE835CB5FEE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5198CA5E-47E3-409A-8409-86D3E067D71F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5198CA5E-47E3-409A-8409-86D3E067D71F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5198CA5E-47E3-409A-8409-86D3E067D71F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5198CA5E-47E3-409A-8409-86D3E067D71F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{246C93BE-77F0-467B-960B-88805DE907DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{246C93BE-77F0-467B-960B-88805DE907DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{246C93BE-77F0-467B-960B-88805DE907DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{246C93BE-77F0-467B-960B-88805DE907DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22CA041A-7417-4517-8166-6FDDFFD04C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22CA041A-7417-4517-8166-6FDDFFD04C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22CA041A-7417-4517-8166-6FDDFFD04C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22CA041A-7417-4517-8166-6FDDFFD04C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15F47477-2A0B-4BB7-8985-92DD291B5498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F47477-2A0B-4BB7-8985-92DD291B5498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F47477-2A0B-4BB7-8985-92DD291B5498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F47477-2A0B-4BB7-8985-92DD291B5498}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
