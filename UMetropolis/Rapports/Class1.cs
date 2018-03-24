@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UMetropolis.Service
+namespace Rapports
 {
     public class Class1
     {

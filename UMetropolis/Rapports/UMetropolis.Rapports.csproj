@@ -2,10 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>UMetropolis.Rapports</AssemblyName>
+    <RootNamespace>UMetropolis.Rapports</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\UMetropolis.Domaine\UMetropolis.Domaine.csproj" />
-  </ItemGroup>
 
 </Project>

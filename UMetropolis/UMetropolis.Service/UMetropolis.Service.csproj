@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UMetropolis.Domaine\UMetropolis.Domaine.csproj" />
+    <ProjectReference Include="..\UMetropolis.Infrastructure\UMetropolis.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
