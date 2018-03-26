@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace UMetropolis.Domaine
 {
@@ -6,6 +7,8 @@ namespace UMetropolis.Domaine
     {
 
         public int Id { get; private set; }
+        public List<Cours> ListCoursInscrits { get; set; }
+
 
         public Etudiant(int id)
         {

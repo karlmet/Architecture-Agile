@@ -13,6 +13,7 @@ namespace UMetropolis.Tests.Service
     {
         private Fixture _fix;
         private IDepotCours _mockDepotCours;
+        private IDepotEtudiant _mockDepotEtudiant;
         private IServiceSecurite _mockServiceSecurite;
         private InscriptionService _instanceService;
 
@@ -21,7 +22,8 @@ namespace UMetropolis.Tests.Service
             _fix = new Fixture();
             _mockDepotCours = Substitute.For<IDepotCours>();
             _mockServiceSecurite = Substitute.For<IServiceSecurite>();
-            _instanceService = new InscriptionService(_mockDepotCours, _mockServiceSecurite);
+            _mockDepotEtudiant = Substitute.For<IDepotEtudiant>();
+            _instanceService = new InscriptionService(_mockDepotCours, _mockServiceSecurite, _mockDepotEtudiant);
         }
 
         [Fact]
@@ -37,7 +39,7 @@ namespace UMetropolis.Tests.Service
 
             //--assertion
             access.Should().BeTrue();
-        }
+        }                                                                                                                 
 
 
         [Fact]
@@ -46,6 +48,9 @@ namespace UMetropolis.Tests.Service
             //--arranger
             var etudiant = _fix.Create<Etudiant>();
             _mockDepotCours.ObtenirCoursEtudiantDroit(Arg.Is(etudiant.Id)).Returns(_fix.Create<List<Cours>>());
+            _mockServiceSecurite.EstUtilisateurAuthentifie(Arg.Is(etudiant.Id)).Returns(true);
+            _mockServiceSecurite.AccesEtudiant(Arg.Is(etudiant.Id)).Returns(true);
+
 
             //--agir
             var listeCours = _instanceService.ObtenirListeCours(etudiant.Id);
@@ -54,6 +59,21 @@ namespace UMetropolis.Tests.Service
             listeCours.Should().NotBeEmpty();
         }
 
+        [Fact]
+        public void ChoisirCours_EtudiantAccesCoursEtPlaceLibre_ChoixValide()
+        {
+            //--arranger
+            var etudiant = _fix.Create<Etudiant>();
+            var cours = _fix.Create<Cours>();
+            _mockServiceSecurite.EstUtilisateurAuthentifie(Arg.Is(etudiant.Id)).Returns(true);
+            _mockServiceSecurite.AccesEtudiant(Arg.Is(etudiant.Id)).Returns(true);
+            _mockDepotEtudiant.ObtenirEtudiant(Arg.Is(etudiant.Id)).Returns(etudiant);
 
+            //--agir
+            var access = _instanceService.ChoisirCours(etudiant.Id, cours.Id);
+
+            //--assertion
+            access.Should().BeTrue();
+        }
     }
 }

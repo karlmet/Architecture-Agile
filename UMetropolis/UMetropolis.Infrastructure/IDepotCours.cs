@@ -6,5 +6,6 @@ namespace UMetropolis.Infrastructure
     public interface IDepotCours
     {
         List<Cours> ObtenirCoursEtudiantDroit(int id);
+        Cours ObtenirCours(int coursId);
     }
 }

@@ -11,5 +11,10 @@ namespace UMetropolis.Infrastructure
         {
             throw new NotImplementedException();
         }
+
+        public Cours ObtenirCours(int coursId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
