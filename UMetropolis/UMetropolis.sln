@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UMetropolis.Web", "Universi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UMetropolis.Tests", "UMetropolis.Tests\UMetropolis.Tests.csproj", "{15F47477-2A0B-4BB7-8985-92DD291B5498}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMetropolis.Rapports", "Rapports\UMetropolis.Rapports.csproj", "{B2F3B639-9064-4034-9129-EA99F0A7E575}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UMetropolis.Pegase.Rapports", "Rapports\UMetropolis.Pegase.Rapports.csproj", "{B2F3B639-9064-4034-9129-EA99F0A7E575}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

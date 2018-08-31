@@ -16,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Rapports\UMetropolis.Pegase.Rapports.csproj" />
     <ProjectReference Include="..\UMetropolis.Domaine\UMetropolis.Domaine.csproj" />
+    <ProjectReference Include="..\UMetropolis.Infrastructure\UMetropolis.Infrastructure.csproj" />
     <ProjectReference Include="..\UMetropolis.Service\UMetropolis.Service.csproj" />
     <ProjectReference Include="..\UniversiteMetropolisWeb\UMetropolis.Web.csproj" />
   </ItemGroup>

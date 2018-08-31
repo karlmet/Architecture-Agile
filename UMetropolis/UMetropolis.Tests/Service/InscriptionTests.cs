@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 using AutoFixture;
 using FluentAssertions;
@@ -12,7 +13,7 @@ namespace UMetropolis.Tests.Service
     public class InscriptionTests
     {
         private Fixture _fix;
-        private IDepotCours _mockDepotCours;
+        private Infrastructure.IDepotCours _mockDepotCours;
         private IDepotEtudiant _mockDepotEtudiant;
         private IServiceSecurite _mockServiceSecurite;
         private InscriptionService _instanceService;
@@ -20,7 +21,9 @@ namespace UMetropolis.Tests.Service
         public InscriptionTests()
         {
             _fix = new Fixture();
-            _mockDepotCours = Substitute.For<IDepotCours>();
+            _fix.Behaviors.OfType<ThrowingRecursionBehavior>().ToList().ForEach(b => _fix.Behaviors.Remove(b));
+            _fix.Behaviors.Add(new OmitOnRecursionBehavior());
+            _mockDepotCours = Substitute.For<Infrastructure.IDepotCours>();
             _mockServiceSecurite = Substitute.For<IServiceSecurite>();
             _mockDepotEtudiant = Substitute.For<IDepotEtudiant>();
             _instanceService = new InscriptionService(_mockDepotCours, _mockServiceSecurite, _mockDepotEtudiant);

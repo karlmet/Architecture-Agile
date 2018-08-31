@@ -63,6 +63,7 @@ namespace UMetropolis.Service
         private bool ValiderChoixCours(int etudiantId, int coursId)
         {
             // todo implémenter la règle BR129
+            UMetropolis.Domaine.Trace.Journalise("Cours " + coursId + " a été validé pour étudiant " + etudiantId);
             return true;
         }
     }
