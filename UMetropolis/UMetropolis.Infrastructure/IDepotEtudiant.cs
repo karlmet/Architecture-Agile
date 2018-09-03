@@ -9,5 +9,7 @@ namespace UMetropolis.Infrastructure
     {
         Etudiant ObtenirEtudiant(int etudiantId);
 
+        bool EtudiantExcluPotentiel(int etudiantId);
+        bool EstInscritMaitrise(int etudiantId);
     }
 }

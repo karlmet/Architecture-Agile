@@ -29,7 +29,7 @@ namespace UMetropolis.Tests
         public void Test()
         {
             //--arranger
-         
+
             var mockDepotCours = Substitute.For<Pegase.Rapports.IDepotCours>();
             var listeCoursConfirm = _fix.Create<List<Cours>>();
             mockDepotCours.ObtenirCoursConfirme().Returns(listeCoursConfirm);

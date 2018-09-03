@@ -16,5 +16,15 @@ namespace UMetropolis.Infrastructure
         {
             throw new NotImplementedException();
         }
+
+        public bool ValiderPrioriteCours(int coursId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ValiderCoursMaitrise(int etudiantId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

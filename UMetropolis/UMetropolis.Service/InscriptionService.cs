@@ -54,16 +54,30 @@ namespace UMetropolis.Service
 
         }
 
-        private bool ValiderConflitsCours(List<Cours> etudiantListCoursInscrits, Cours cours)
+        private bool ValiderConflitsCours(List<Cours> etudiantListCoursInscrits, Cours coursAValider)
         {
-           //todo à faire
+            foreach (var coursInscrit in etudiantListCoursInscrits)
+            {
+                if (coursInscrit.Jours == coursAValider.Jours && coursInscrit.Heure == coursAValider.Heure)
+                    return false;
+            }
             return true;
         }
 
         private bool ValiderChoixCours(int etudiantId, int coursId)
         {
-            // todo implémenter la règle BR129
-            UMetropolis.Domaine.Trace.Journalise("Cours " + coursId + " a été validé pour étudiant " + etudiantId);
+            bool validerRegleExclusion = _depotEtudiant.EtudiantExcluPotentiel(etudiantId);
+            bool validerCoursLimite = _depotCours.ValiderPrioriteCours(coursId);
+            bool validerCoursExclusifMaitrise = _depotCours.ValiderCoursMaitrise(etudiantId);
+            bool statutEtudiantMaitrise = _depotEtudiant.EstInscritMaitrise(etudiantId);
+
+            if (validerCoursExclusifMaitrise && !statutEtudiantMaitrise)
+                return false;
+
+            if (validerRegleExclusion | validerCoursLimite)
+                return false;
+
+            UMetropolis.Domaine.Trace.Journalise("la règle BR129 pour le cours " + coursId + " a été validé pour étudiant " + etudiantId);
             return true;
         }
     }

@@ -26,9 +26,7 @@ namespace Rapports
                 aServiceFacturation.FacturerCoursConfirmer(oListeCoursConfirme);
                 UMetropolis.Domaine.Trace.Journalise("Nombre de cours facturé:" + oListeCoursConfirme.Count);
                 Journalisation.Log("Appel au service de facturation réussi");
-            }
-              
-            
+            }            
         }
     }
 }

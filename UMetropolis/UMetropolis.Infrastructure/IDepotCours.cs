@@ -7,5 +7,7 @@ namespace UMetropolis.Infrastructure
     {
         List<Cours> ObtenirCoursEtudiantDroit(int id);
         Cours ObtenirCours(int coursId);
+        bool ValiderPrioriteCours(int coursId);
+        bool ValiderCoursMaitrise(int etudiantId);
     }
 }

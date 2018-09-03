@@ -68,9 +68,14 @@ namespace UMetropolis.Tests.Service
             //--arranger
             var etudiant = _fix.Create<Etudiant>();
             var cours = _fix.Create<Cours>();
+            _mockDepotCours.ObtenirCours(Arg.Any<int>()).Returns(cours);
             _mockServiceSecurite.EstUtilisateurAuthentifie(Arg.Is(etudiant.Id)).Returns(true);
             _mockServiceSecurite.AccesEtudiant(Arg.Is(etudiant.Id)).Returns(true);
             _mockDepotEtudiant.ObtenirEtudiant(Arg.Is(etudiant.Id)).Returns(etudiant);
+            _mockDepotCours.ValiderCoursMaitrise(Arg.Is(cours.Id)).Returns(false);
+            _mockDepotEtudiant.EstInscritMaitrise(Arg.Is(etudiant.Id)).Returns(false);
+            _mockDepotCours.ValiderPrioriteCours(Arg.Is(cours.Id)).Returns(false);
+            _mockDepotEtudiant.EtudiantExcluPotentiel(Arg.Is(etudiant.Id)).Returns(false);
 
             //--agir
             var access = _instanceService.ChoisirCours(etudiant.Id, cours.Id);

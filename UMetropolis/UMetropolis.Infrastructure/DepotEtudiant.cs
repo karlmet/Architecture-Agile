@@ -9,5 +9,15 @@ namespace UMetropolis.Infrastructure
         {
             throw new NotImplementedException();
         }
+
+        public bool EtudiantExcluPotentiel(int etudiantId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool EstInscritMaitrise(int etudiantId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
